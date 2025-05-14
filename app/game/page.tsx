@@ -15,12 +15,7 @@ import { cookies } from "next/headers"
 
 export default async function GamePage() {
   // Get user data
-  const { user, shouldDeleteCookie } = await checkAuth()
-
-  if (shouldDeleteCookie) {
-    const cookieStore = await cookies()
-    cookieStore.delete("session") // This is valid here
-  }
+  const user = await checkAuth()
 
   // If no user is found, redirect to login
   if (!user) {

@@ -152,36 +152,45 @@ export async function logout() {
 
 export async function checkAuth() {
   try {
+    console.log("checking auth")
     const cookieStore = await cookies()
     const sessionToken = cookieStore.get("session")?.value
 
-    if (!sessionToken) return { user: null }
-
-    const { data: sessionData, error: sessionError } = await supabase.auth.getUser(sessionToken)
-
-    if (sessionError || !sessionData.user) {
-      return { user: null, shouldDeleteCookie: true }
+    if (!sessionToken) {
+      console.log("no sesh token")
+      return null
     }
 
+    // Verify the session with Supabase
+    const { data: sessionData, error: sessionError } = await supabase.auth.getUser(sessionToken)
+    console.log(`auth checked: ${sessionData.user}`)
+
+    if (sessionError || !sessionData.user) {
+      cookieStore.delete("session")
+      console.log("Invalid session. Cookie deleted.")
+      return null
+    }
+
+    // Get user profile data
     const { data: userData, error: userError } = await supabase
       .from("users")
       .select("*")
       .eq("id", sessionData.user.id)
       .single()
 
-    if (userError || !userData) return { user: null }
+    if (userError || !userData) {
+      return null
+    }
 
     return {
-      user: {
-        id: userData.id,
-        email: userData.email,
-        firstName: userData.first_name,
-        lastName: userData.last_name,
-      },
+      id: userData.id,
+      email: userData.email,
+      firstName: userData.first_name,
+      lastName: userData.last_name,
     }
   } catch (error) {
     console.error("Auth check error:", error)
-    return { user: null }
+    return null
   }
 }
 
