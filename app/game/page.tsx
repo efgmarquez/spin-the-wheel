@@ -1,3 +1,5 @@
+"use server"
+
 import { checkAuth } from "@/app/actions/auth"
 import { getPrizes } from "@/app/actions/prizes"
 import { PrizeWheel } from "@/components/prize-wheel"
@@ -5,6 +7,7 @@ import { PrizeHistory } from "@/components/prize-history"
 import { Button } from "@/components/ui/button"
 import { redirect } from "next/navigation"
 import { getUserPrizes } from "@/app/actions/prizes"
+import { cookies } from "next/headers"
 
 // // Add a cache directive to prevent excessive revalidation
 // export const dynamic = "force-dynamic"
@@ -12,7 +15,12 @@ import { getUserPrizes } from "@/app/actions/prizes"
 
 export default async function GamePage() {
   // Get user data
-  const user = await checkAuth()
+  const { user, shouldDeleteCookie } = await checkAuth()
+
+  if (shouldDeleteCookie) {
+    const cookieStore = await cookies()
+    cookieStore.delete("session") // This is valid here
+  }
 
   // If no user is found, redirect to login
   if (!user) {

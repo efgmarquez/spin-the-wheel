@@ -5,8 +5,8 @@ export default function Home() {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-500 to-pink-500 p-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-white mb-2">Prize Wheel Game</h1>
-          <p className="text-white/80">Sign in to spin the wheel and win amazing prizes!</p>
+          <h1 className="text-4xl font-bold text-white mb-2">Spin the Wheel</h1>
+          <p className="text-white/80">Register or sign in to spin the wheel and win amazing prizes!</p>
         </div>
         <AuthForm />
       </div>

@@ -142,7 +142,6 @@ export async function logout() {
     const cookieStore = await cookies()
     cookieStore.delete("session")
 
-
     // Return success
     return { success: true, redirectTo: "/" }
   } catch (error) {
@@ -153,44 +152,36 @@ export async function logout() {
 
 export async function checkAuth() {
   try {
-    console.log("checking auth")
     const cookieStore = await cookies()
     const sessionToken = cookieStore.get("session")?.value
 
-    if (!sessionToken) {
-      console.log("no sesh token")
-      return null
-    }
+    if (!sessionToken) return { user: null }
 
-    // Verify the session with Supabase
     const { data: sessionData, error: sessionError } = await supabase.auth.getUser(sessionToken)
-    console.log(`auth checked: ${sessionData.user}`)
 
     if (sessionError || !sessionData.user) {
-      cookieStore.delete("session")
-      console.log("Invalid session. Cookie deleted.")
-      return null
+      return { user: null, shouldDeleteCookie: true }
     }
 
-    // Get user profile data
     const { data: userData, error: userError } = await supabase
       .from("users")
       .select("*")
       .eq("id", sessionData.user.id)
       .single()
 
-    if (userError || !userData) {
-      return null
-    }
+    if (userError || !userData) return { user: null }
 
     return {
-      id: userData.id,
-      email: userData.email,
-      firstName: userData.first_name,
-      lastName: userData.last_name,
+      user: {
+        id: userData.id,
+        email: userData.email,
+        firstName: userData.first_name,
+        lastName: userData.last_name,
+      },
     }
   } catch (error) {
     console.error("Auth check error:", error)
-    return null
+    return { user: null }
   }
 }
+

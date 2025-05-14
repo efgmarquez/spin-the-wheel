@@ -1,0 +1,88 @@
+<mxfile host="65bd71144e">
+    <diagram id="GRxruIfQeX-nRg77BhUU" name="Page-1">
+        <mxGraphModel dx="2379" dy="577" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="64" value="Front end" style="swimlane;html=1;startSize=30;horizontal=0;fillStyle=auto;" vertex="1" parent="1">
+                    <mxGeometry x="-800" y="150" width="710" height="120" as="geometry">
+                        <mxRectangle x="20" width="850" height="30" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="65" value="&lt;font&gt;User registers&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#000000;align=center;shadow=0;glass=0;strokeColor=default;" vertex="1" parent="64">
+                    <mxGeometry x="50" y="30" width="80" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="75" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="64" source="70" target="74">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="70" value="&lt;font&gt;User confirms&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#000000;align=center;shadow=0;glass=0;strokeColor=default;" vertex="1" parent="64">
+                    <mxGeometry x="160" y="30" width="80" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="74" value="&lt;font&gt;User logs in&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#000000;align=center;shadow=0;glass=0;strokeColor=default;" vertex="1" parent="64">
+                    <mxGeometry x="270" y="30" width="80" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="83" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="64" source="80" target="82">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="80" value="Spin the wheel" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#000000;align=center;shadow=0;glass=0;strokeColor=default;" vertex="1" parent="64">
+                    <mxGeometry x="380" y="30" width="80" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="82" value="Compute prize" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#000000;align=center;shadow=0;glass=0;strokeColor=default;" vertex="1" parent="64">
+                    <mxGeometry x="490" y="30" width="80" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="89" value="Show prize history" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#000000;align=center;shadow=0;glass=0;strokeColor=default;" vertex="1" parent="64">
+                    <mxGeometry x="600" y="30" width="80" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="67" value="Back end" style="swimlane;html=1;startSize=30;horizontal=0;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="-800" y="270" width="710" height="120" as="geometry">
+                        <mxRectangle x="20" width="850" height="30" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="72" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="67" source="68" target="71">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="68" value="&lt;font&gt;New account is created&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#000000;align=center;shadow=0;glass=0;strokeColor=default;" vertex="1" parent="67">
+                    <mxGeometry x="50" y="30" width="80" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="71" value="&lt;font&gt;Send email confirmation&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#000000;align=center;shadow=0;glass=0;strokeColor=default;" vertex="1" parent="67">
+                    <mxGeometry x="160" y="30" width="80" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="79" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="67" source="76" target="78">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="76" value="Authenticate credentials" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#000000;align=center;shadow=0;glass=0;strokeColor=default;" vertex="1" parent="67">
+                    <mxGeometry x="270" y="30" width="80" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="78" value="Send session token" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#000000;align=center;shadow=0;glass=0;strokeColor=default;" vertex="1" parent="67">
+                    <mxGeometry x="380" y="30" width="80" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="84" value="Save prize to DB" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#000000;align=center;shadow=0;glass=0;strokeColor=default;" vertex="1" parent="67">
+                    <mxGeometry x="490" y="30" width="80" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="69" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="65" target="68">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="73" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="71" target="70">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="77" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="74" target="76">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="81" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="78" target="80">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="86" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="82" target="84">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="88" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="84" target="89">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="-200" y="330" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="-160" y="330"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
